@@ -1,25 +1,43 @@
 body {
-  background-image: url("../");
-  background-color: #cccccc; }
+  background-image: url("../.gif");
+  background-color: #fff; }
 
 h1 {
-  font-style: italic; }
+  font-style: italic;
+  text-align: center; }
 
 table {
-  font-family: arial, sans-serif;
+  margin-top: 40px;
+  font-family: courier, arial, sans-serif;
   border-collapse: collapse;
-  width: 100%; }
+  width: 90%;
+  margin-left: 65px; }
 
 td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px; }
+  font-family: arial, courier, sans-serif;
+  text-align: center;
+  padding: 20px; }
+
+tr:nth-child(1) {
+  background-color: #dddddd;
+  font-style: italic; }
 
 tr:nth-child(even) {
-  background-color: #dddddd; }
+  border-bottom: double;
+  background-color: orange; }
+
+tr:nth-child(odd) {
+  border-bottom: double; }
+
+tr:nth-child(8) {
+  background-color: #dddddd;
+  font-style: italic;
+  font-weight: bold;
+  border-bottom: none; }
 
 table, th, td {
-  border: 1px solid black; }
+  border-bottom: 1px solid black;
+  border-width: 5px; }
 
 th {
   text-align: center; }

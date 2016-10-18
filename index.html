@@ -1,98 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="scss/style.css">
-	<title>App</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="scss/style.css">
+    <title>App</title>
 </head>
 <body>
+
 <h1>Petit compte entre amis</h1>
+
+<p>Utilisateur: Micka</p>
+<p>date : le mm/jj/yy</p>
+
 <table >
   <tr class="one">
-    <th>participants</th>
+    <th>Groupes</th>
+    <th>nom des participants</th>
     <th>type de dépenses</th>
-    <th>payeurs(montant déclaré)</th>
+    <th>payeurs (montant déclaré)</th>
     <th>créditeurs</th>
     <th>concernés</th>
     <th>montant/concernés</th>
-    <th>Equilibrage des comptes</th>
-
+    <th>Equilibrage final</th>
   </tr >
-   <tr class="two">
-    <td>Alex
-	<select name="choix" id="choix1" class="green"><!--meme class que le premier <option> -->
-    <option value="green" class="green" onClick="set('green')">1</option>
-    <option value="blue" class="blue" onClick="set('blue')">2</option>
-    <option value="red" class="red" onClick="set('red')">3</option>
-    <option value="yellow" class="yellow" onClick="set('yellow')">4</option>
-	<option value = "black" class="black"onClick="set('black')">5</option> 
-	<option value = "white" class="white "onClick="set('white')">6</option> 
- 	</select>
 
-
-
-
-
-    </td>
-    <td><input type="text" value=""></input>
-    	<input type="text" value=""></input>
-    </td>
-    <td><input type="checkbox">
-    	<input type="number"></input>
-    	<input type="number"></input>
-    </td>
-    <td><input type="checkbox"></td>
-    <td><input type="checkbox"></td>
-    <td><input type="number"></input>
-		<input type="number"></input>
-    </td>
+  <tr class="two">
     <td></td>
-
-    </tr >
+    <td>Alex</td>
+    <td>séjour hôtel</td>
+    <td>104</td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td>
+    <td>42</td>
+    <td></td>
+  </tr >
  
   <tr class="three">
+    <td></td>
     <td>Bruno</td>
-    <td><input type="text"></input></td>
-    <td><input type="checkbox"><input type="number"></input></td>
-    <td><input type="checkbox"></td>
-    <td><input type="checkbox"></td>
-    <td><input type="number"></input></td>
     <td></td>
-
-    
+    <td></td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td>
+    <td>42</td>
+    <td></td>   
   </tr>
+
   <tr class="four">
+    <td></td>
     <td>Julia</td>
-    <td><input type="text"auto></input></td>
-    <td><input type="checkbox"><input type="number"></input></td>
+    <td>Automobile</td>
+    <td>64</td>
     <td><input type="checkbox"></td>
     <td><input type="checkbox"></td>
-    <td><input type="number"></input></td>
-    <td></td>
+    <td>42</td>
+    <td></td>   
+  </tr>
 
-   
-  </tr>
   <tr class="five">
-    <td>Loïc</td>
-    <td><input type="text"></input></td>
-    <td><input type="checkbox"><input type="number"></input></td>
-    <td><input type="checkbox"></td>
-    <td><input type="checkbox"></td>
-    <td><input type="number"></input></td>
     <td></td>
- 
-  
+    <td>Loïc</td>
+    <td></input></td>
+    <td></td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td>
+    <td>42</td>
+    <td></td>  
   </tr>
+
   <tr class="six">
     <td></td>
+    <td>Micka</td>
     <td></td>
     <td></td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td>
     <td></td>
     <td></td>
-    <td></td>
-    <td></td>
-
-
   </tr>
 
   </tr>
@@ -104,51 +88,27 @@
     <td></td>
     <td></td>
     <td></td>
-
-
+    <td></td>
   </tr>
+
   <tr class="eight">
     <td>Totaux</td>
     <td></td>
-    <td><input type="number"></input></td>
+    <td></td>
+    <td>168</td>
     <td></td>
     <td></td>
-    <td><input type="number"></input></td>
     <td></td>
- 
-
+    <td></td>
   </tr>
 </table>
 
 
 <script type='text/javascript'>
-	function set(couleur){
-		document.getElementById('choix1').className=couleur;
+    function set(couleur){
+        document.getElementById('choix1').className=couleur;
 }
 </script>
-
-
-<style type="text/css">
-.green {
-    background: green;
-}
-.blue{
-    background: blue;
-}
-.red {
-    background: red;
-}
-
-.yellow {
-    background: yellow;
-}
-.black {
-    background: black;
-}
-.white {
-    background: white;
-} 
-</style>
 
                    
  <select name="choix" id="choix1" class="green"><!--meme class que le premier <option> -->
@@ -156,17 +116,10 @@
     <option value="blue" class="blue" onClick="set('blue')">2</option>
     <option value="red" class="red" onClick="set('red')">3</option>
     <option value="yellow" class="yellow" onClick="set('yellow')">4</option>
-	<option value = "black" class="black"onClick="set('black')">5</option> 
-	<option value = "white" class="white "onClick="set('white')">6</option> 
+    <option value = "black" class="black"onClick="set('black')">5</option> 
+    <option value = "white" class="white "onClick="set('white')">6</option> 
  </select>
     
-
-
-
-
-
-    		
-
 
 </body>
 </html>
