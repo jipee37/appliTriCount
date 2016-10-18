@@ -9,37 +9,30 @@ h1 {
 table {
   margin-top: 40px;
   font-family: courier, arial, sans-serif;
-  border-collapse: collapse;
   width: 90%;
   margin-left: 65px; }
 
 td, th {
   font-family: arial, courier, sans-serif;
   text-align: center;
-  padding: 20px; }
+  padding: 22px;
+  border-bottom: 1px solid black;
+  border-width: 4px; }
 
 tr:nth-child(1) {
   background-color: #dddddd;
   font-style: italic; }
 
 tr:nth-child(even) {
-  border-bottom: double;
-  background-color: orange; }
-
-tr:nth-child(odd) {
-  border-bottom: double; }
+  background-color: lightgreen; }
 
 tr:nth-child(8) {
   background-color: #dddddd;
   font-style: italic;
-  font-weight: bold;
-  border-bottom: none; }
+  font-weight: bold; }
 
-table, th, td {
-  border-bottom: 1px solid black;
-  border-width: 5px; }
-
-th {
-  text-align: center; }
+td:nth-child(8) {
+  background-color: orange;
+  text-align: left; }
 
 /*# sourceMappingURL=style.css.map */
