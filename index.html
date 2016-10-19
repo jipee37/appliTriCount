@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="myFirstApp">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="scss/style.css">
+    
     <title>App</title>
+
+    <link rel="stylesheet" type="text/css" href="scss/style.css">
+    <!-- <script https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js></script> -->
+    <script type="text/javascript" src="vendor/angular-1.5.8/angular.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
 </head>
 <body>
 
+
 <h1>Petit compte entre amis</h1>
 
-<p>Utilisateur: Micka</p>
-<p>date : le mm/jj/yy</p>
+<div ng-controller="testsCtrl"> 
+<!-- <input ng-model="name"> -->
+<h2>{{name1}}</h2>
+</div>
 
-<table >
+<table ng-controller="usersCtrl">
+ 
   <tr class="one">
     <th>Groupes</th>
     <th>nom des participants</th>
@@ -22,13 +31,13 @@
     <th>concernés</th>
     <th>montant/concernés</th>
     <th>Equilibrage final</th>
-  </tr >
+  </tr>
 
-  <tr class="two">
+  <tr class="two" ng-repeat="user in users">
     <td></td>
-    <td>Alex</td>
-    <td>séjour hôtel</td>
-    <td>104</td>
+    <td>{{user.username}}</td>
+    <td></td>
+    <td></td>
     <td><input type="checkbox"></td>
     <td><input type="checkbox"></td>
     <td>42</td>
@@ -46,11 +55,11 @@
     <td> <button type="button" class="small">-</button> </td>   
   </tr>
 
-  <tr class="four">
+  <tr class="four" ng-controller = "depensesCtrl">
     <td></td>
-    <td>Julia</td>
-    <td>Automobile</td>
-    <td>64</td>
+    <td></td>
+    <td></td>
+    <td></td>
     <td><input type="checkbox"></td>
     <td><input type="checkbox"></td>
     <td>42</td>
@@ -59,7 +68,7 @@
 
   <tr class="five">
     <td></td>
-    <td>Loïc</td>
+    <td></td>
     <td></input></td>
     <td></td>
     <td><input type="checkbox"></td>
@@ -70,7 +79,7 @@
 
   <tr class="six">
     <td></td>
-    <td>Micka</td>
+    <td></td>
     <td></td>
     <td></td>
     <td><input type="checkbox"></td>
@@ -95,7 +104,7 @@
     <td>Totaux</td>
     <td></td>
     <td></td>
-    <td>168</td>
+    <td>{{104+64}}</td>
     <td></td>
     <td></td>
     <td></td>
@@ -104,21 +113,6 @@
 </table>
 
 
-<script type='text/javascript'>
-    function set(couleur){
-        document.getElementById('choix1').className=couleur;
-}
-</script>
-
-                   
- <select name="choix" id="choix1" class="green"><!--meme class que le premier <option> -->
-    <option value="green" class="green" onClick="set('green')">1</option>
-    <option value="blue" class="blue" onClick="set('blue')">2</option>
-    <option value="red" class="red" onClick="set('red')">3</option>
-    <option value="yellow" class="yellow" onClick="set('yellow')">4</option>
-    <option value = "black" class="black"onClick="set('black')">5</option> 
-    <option value = "white" class="white "onClick="set('white')">6</option> 
- </select>
     
 
 </body>
