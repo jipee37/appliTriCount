@@ -1,4 +1,4 @@
-var app = angular.module('myFirstApp', []);
+var app = angular.module('myFirstApp', ['angular.filter']);
 
  app.controller('usersCtrl', function($scope, $http) {
  	$http({
@@ -9,6 +9,7 @@ var app = angular.module('myFirstApp', []);
  	});
  });	
 
+
 app.controller('depensesCtrl', function($scope, $http) {
  	$http({
  		method:"GET",
@@ -16,13 +17,6 @@ app.controller('depensesCtrl', function($scope, $http) {
  	}) .then(function(response){
  		$scope.depenses=response.data.records
  	});
- });	
-
-
-
-
-
-
- app.controller('testsCtrl', function($scope) {
- 	$scope.name1 = 'titi';
  });
+ 
+

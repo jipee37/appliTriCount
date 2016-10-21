@@ -9,104 +9,56 @@
     <!-- <script https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js></script> -->
     <script type="text/javascript" src="vendor/angular-1.5.8/angular.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="bower_components/angular-filter/dist/angular-filter.min.js"></script>
 </head>
 <body>
 
 
 <h1>Petit compte entre amis</h1>
 
-<div ng-controller="testsCtrl"> 
-<!-- <input ng-model="name"> -->
-<h2>{{name1}}</h2>
-</div>
-
 <table ng-controller="usersCtrl">
  
   <tr class="one">
-    <th>Groupes</th>
+    <th>Id</th>
     <th>nom des participants</th>
-    <th>type de dépenses</th>
-    <th>payeurs (montant déclaré)</th>
+    <th>couleur</th>
+    <th>type de dépenses(description)</th>
     <th>créditeurs</th>
     <th>concernés</th>
+  </tr>
+
+
+  <tr class="two" ng-repeat="user in users">
+                 <!--  ng-repeat="(key,value) in users | groupBy:'usergroup'" --> 
+                     
+    <td>{{user.Id}}</td>
+    <td>{{user.username}}</td>
+    <td>{{user.usercolor}}</td>   
+    <td>{{key}}</td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td>   
+  </tr>  
+</table>  
+ 
+
+<table ng-controller = "depensesCtrl">  
+
+    <tr class="one"> 
+    <th>payeurs (montant déclaré)</th>
     <th>montant/concernés</th>
     <th>Equilibrage final</th>
   </tr>
 
-  <tr class="two" ng-repeat="user in users">
+  <tr class="two" ng-repeat="depense in depenses">
+    <td>{{depense.Montant}}</td>
     <td></td>
-    <td>{{user.username}}</td>
     <td></td>
     <td></td>
-    <td><input type="checkbox"></td>
-    <td><input type="checkbox"></td>
-    <td>42</td>
-    <td> <button type="button" class="small">+</button> </td>
-  </tr >
- 
+  </tr>
+
+
   <tr class="three">
-    <td></td>
-    <td>Bruno</td>
-    <td></td>
-    <td></td>
-    <td><input type="checkbox"></td>
-    <td><input type="checkbox"></td>
-    <td>42</td>
-    <td> <button type="button" class="small">-</button> </td>   
-  </tr>
-
-  <tr class="four" ng-controller = "depensesCtrl">
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><input type="checkbox"></td>
-    <td><input type="checkbox"></td>
-    <td>42</td>
-    <td> <button type="button" class="small">+</button> </td>   
-  </tr>
-
-  <tr class="five">
-    <td></td>
-    <td></td>
-    <td></input></td>
-    <td></td>
-    <td><input type="checkbox"></td>
-    <td><input type="checkbox"></td>
-    <td>42</td>
-    <td> <button type="button" class="small">-</button> </td>  
-  </tr>
-
-  <tr class="six">
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><input type="checkbox"></td>
-    <td><input type="checkbox"></td>
-    <td></td>
-    <td></td>
-  </tr>
-
-  </tr>
-  <tr class="seven">
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-
-  <tr class="eight">
     <td>Totaux</td>
-    <td></td>
-    <td></td>
-    <td>{{104+64}}</td>
-    <td></td>
-    <td></td>
     <td></td>
     <td></td>
   </tr>
