@@ -28,13 +28,13 @@
   </tr>
 
 
-  <tr class="two" ng-repeat="user in users">
-                 <!--  ng-repeat="(key,value) in users | groupBy:'usergroup'" --> 
+  <tr class="two" ng-repeat="user in users ">
+                 <!--  ng-repeat="(key,value) in users | groupBy:'Id'" {{key}}--> 
                      
     <td>{{user.Id}}</td>
     <td>{{user.username}}</td>
     <td>{{user.usercolor}}</td>   
-    <td>{{key}}</td>
+    <td></td>
     <td><input type="checkbox"></td>
     <td><input type="checkbox"></td>   
   </tr>  
@@ -43,22 +43,30 @@
 
 <table ng-controller = "depensesCtrl">  
 
-    <tr class="one"> 
-    <th>payeurs (montant déclaré)</th>
+  <tr class="one"> 
+    <th>payeurs</th>
+    <th>montant déclaré</th>
+    <th>Concernés</th>
+    <th>nombre Concernés</th>
     <th>montant/concernés</th>
     <th>Equilibrage final</th>
   </tr>
 
   <tr class="two" ng-repeat="depense in depenses">
+    <td>{{depense.Payeur}}</td>
     <td>{{depense.Montant}}</td>
-    <td></td>
-    <td></td>
+    <td>{{depense.Concernes}}</td>
+    <td>{{depense.nbConcernes}}</td>
+    <td>{{depense.Montant/(depense.nbConcernes)}}</td>
     <td></td>
   </tr>
 
 
   <tr class="three">
     <td>Totaux</td>
+    <td></td>
+    <td></td>
+    <td></td>
     <td></td>
     <td></td>
   </tr>
