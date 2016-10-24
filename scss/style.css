@@ -26,13 +26,13 @@ tr:nth-child(1) {
 tr:nth-child(even) {
   background-color: lightgreen; }
 
-tr:nth-child(8) {
-  background-color: #dddddd;
-  font-style: italic;
-  font-weight: bold; }
-
-td:nth-child(8) {
+.euro {
+  font-weight: bold;
+  text-align: center;
   background-color: orange;
-  text-align: left; }
+  font-size: 20px; }
+
+.first {
+  width: 30%; }
 
 /*# sourceMappingURL=style.css.map */

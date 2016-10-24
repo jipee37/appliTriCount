@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myFirstApp">
+<html lang="fr" ng-app="myFirstApp">
 <head>
     <meta charset="UTF-8">
     
@@ -10,69 +10,97 @@
     <script type="text/javascript" src="vendor/angular-1.5.8/angular.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="bower_components/angular-filter/dist/angular-filter.min.js"></script>
-</head>
+
 <body>
+
+
+
+
+
+<!-- interface de connexion -->
+<h3>interface de connexion:</h3>
+
+<form method="post">
+
+<label>Pseudo: <input type="text" name="pseudo"/></label><br/><br/>
+
+<label>Mot de passe: <input type="password" name="passe"/></label><br/><br/>
+
+<label>Confirmation du mot de passe: <input type="password" name="passe2"/></label><br/><br/>
+
+<label>Adresse e-mail: <input type="text" name="email"/></label><br/><br/>
+
+<input type="submit" value="M'inscrire"/>
+
+<input type="reset" value="reset"/>
+</form>
 
 
 <h1>Petit compte entre amis</h1>
 
-<table ng-controller="usersCtrl">
- 
-  <tr class="one">
-    <th>Id</th>
-    <th>nom des participants</th>
-    <th>couleur</th>
-    <th>type de dépenses(description)</th>
-    <th>créditeurs</th>
-    <th>concernés</th>
-  </tr>
-
-
-  <tr class="two" ng-repeat="user in users ">
-                 <!--  ng-repeat="(key,value) in users | groupBy:'Id'" {{key}}--> 
-                     
-    <td>{{user.Id}}</td>
-    <td>{{user.username}}</td>
-    <td>{{user.usercolor}}</td>   
-    <td></td>
-    <td><input type="checkbox"></td>
-    <td><input type="checkbox"></td>   
-  </tr>  
-</table>  
- 
+<!-- Tableau des dépenses -->
+<div ng-controller="usersCtrl">
 
 <table ng-controller = "depensesCtrl">  
 
   <tr class="one"> 
-    <th>payeurs</th>
+    
+    <th>payeurs<h5>Check to show description</h5></th>
     <th>montant déclaré</th>
-    <th>Concernés</th>
+    <th>Concernés <h5>Check to show</h5></th>
     <th>nombre Concernés</th>
     <th>montant/concernés</th>
     <th>Equilibrage final</th>
   </tr>
 
   <tr class="two" ng-repeat="depense in depenses">
-    <td>{{depense.Payeur}}</td>
-    <td>{{depense.Montant}}</td>
-    <td>{{depense.Concernes}}</td>
+    
+    <td>{{aUsers[depense.Payeur]}}
+        <input type="checkbox" ng-model="myVar">
+        <h3 ng-show="myVar">{{depense.Description}}</h3>
+    </td>
+    <td class="euro">{{depense.Montant | currency:'€'}}</td>
+    <td>
+        <input type="checkbox" ng-model="myVar">
+        <h3 ng-show="myVar"><li>{{aUsers[depense.Concernes]}}</li></h3>
+    </td>
     <td>{{depense.nbConcernes}}</td>
-    <td>{{depense.Montant/(depense.nbConcernes)}}</td>
+    <td class="euro">{{depense.Montant/(depense.nbConcernes) | currency:'€'}}</td>
     <td></td>
   </tr>
 
 
   <tr class="three">
     <td>Totaux</td>
+    <td>test<td>
     <td></td>
+    <td>test</td>
     <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    
   </tr>
 </table>
+</div>
+
+<table class="first" ng-controller="usersCtrl">
+ 
+  <tr class="one">
+    <th>Id</th>
+    <th>nom des participants</th>
+    <th>couleur</th>    
+  </tr>
 
 
+  <tr class="two" ng-repeat="user in users | orderBy : 'username'">
+                 <!--  ng-repeat="(key,value) in users | groupBy:'Id'" {{key}}--> 
+                     
+    <td>{{user.Id}}</td>
+    <td>{{user.username}}</td>
+    <td>{{user.usercolor}}</td>   
+    
+    
+       
+  </tr>  
+</table>  
     
 
 </body>
