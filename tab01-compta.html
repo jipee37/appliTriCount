@@ -8,37 +8,25 @@
 <body>
 
 
-
-<tr class="two">
-    <td>Alex
-    <select name="choix" id="choix1" class="green"><!--meme class que le premier <option> -->
-    <option value="green" class="green" onClick="set('green')">1</option>
-    <option value="blue" class="blue" onClick="set('blue')">2</option>
-    <option value="red" class="red" onClick="set('red')">3</option>
-    <option value="yellow" class="yellow" onClick="set('yellow')">4</option>
-    <option value = "black" class="black"onClick="set('black')">5</option> 
-    <option value = "white" class="white "onClick="set('white')">6</option> 
-    </select>
-    </td>
-</tr >
-  
-
+ <button onclick="myFunction()">Click me</button> 
 
 
 <script type='text/javascript'>
-    function set(couleur){
-        document.getElementById('choix1').className=couleur;
-}
+    
+    myFunction set(color){
+        
+        document.getElementById('choix1').className = color;
+    }
 </script>
 
                    
  <select name="choix" id="choix1" class="green"><!--meme class que le premier <option> -->
-    <option value="green" class="green" onClick="set('green')">1</option>
-    <option value="blue" class="blue" onClick="set('blue')">2</option>
-    <option value="red" class="red" onClick="set('red')">3</option>
-    <option value="yellow" class="yellow" onClick="set('yellow')">4</option>
-    <option value = "black" class="black"onClick="set('black')">5</option> 
-    <option value = "white" class="white "onClick="set('white')">6</option> 
+    <option value="green" class="green" onclick="set('green')">1</option>
+    <option value="blue" class="blue" onclick="set('blue')">2</option>
+    <option value="red" class="red" onclick="set('red')">3</option>
+    <option value="yellow" class="yellow" onclick="set('yellow')">4</option>
+    <option value = "black" class="black" onclick="set('black')">5</option> 
+    <option value = "white" class="white" onclick="set('white')">6</option> 
  </select>
     
 

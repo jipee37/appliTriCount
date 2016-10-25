@@ -11,10 +11,12 @@
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="bower_components/angular-filter/dist/angular-filter.min.js"></script>
 
+	
+
+	
+
+
 <body>
-
-
-
 
 
 <!-- interface de connexion -->
@@ -55,23 +57,33 @@
 
   <tr class="two" ng-repeat="depense in depenses">
     
-    <td>{{aUsers[depense.Payeur]}}
+    <td>
+    	<h4>{{aUsers[depense.Payeur]}}</h4> <!--  | orderBy : usergroup --> 
+    	
         <input type="checkbox" ng-model="myVar">
-        <h3 ng-show="myVar">{{depense.Description}}</h3>
+        <h3 ng-show="myVar">{{depense.Description}}</h3><br>
+        <button onclick="myFunction()">set user color:</button>			  
+        <!-- <h4>{{bUsers[depense.Payeur]}}<h4> écrit la couleur--> 
+        
     </td>
+    
     <td class="euro">{{depense.Montant | currency:'€'}}</td>
+    
     <td>
         <input type="checkbox" ng-model="myVar">
-        <h3 ng-show="myVar"><li>{{aUsers[depense.Concernes]}}</li></h3>
+        <h3 ng-show="myVar"><li>{{aConcernesFinal[depense.Id]}}</li></h3> <!-- {{aUsers[depense.Concernes]}}résoudre -->
+        <h5>color:{{bUsers[depense.Concernes]}}</h5>
     </td>
+    
     <td>{{depense.nbConcernes}}</td>
+    
     <td class="euro">{{depense.Montant/(depense.nbConcernes) | currency:'€'}}</td>
+    
     <td></td>
   </tr>
 
-
   <tr class="three">
-    <td>Totaux</td>
+    <td><!-- Totaux --></td>
     <td>test<td>
     <td></td>
     <td>test</td>
@@ -97,11 +109,17 @@
     <td>{{user.username}}</td>
     <td>{{user.usercolor}}</td>   
     
-    
-       
+           
   </tr>  
 </table>  
-    
+ 
+ <script type="text/javascript">
+function myFunction() {
+
+        document.getElementsByTagName("h4")[0].setAttribute("class", "colorclass"); 
+        
+    };
+</script>
 
 </body>
 </html>
