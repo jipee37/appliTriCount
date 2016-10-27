@@ -11,10 +11,11 @@ var app = angular.module('myFirstApp', ['angular.filter']);
  		$rootScope.aUsers = []; //init
  		$scope.bUsers = [];
         
-        //Generating array aUsers with structure [id => username]
+        //Generating array aUsers with structure [id => username]     
         
         for($user in $scope.users){
 
+            // 
             $rootScope.aUsers[$scope.users[$user].Id] = $scope.users[$user].username;           
             
             $scope.bUsers[$scope.users[$user].Id] = $scope.users[$user].usercolor;	
@@ -26,11 +27,9 @@ var app = angular.module('myFirstApp', ['angular.filter']);
     
     function myFunction() {
 
-        document.getElementsByTagName("h4")[0].setAttribute("class", "colorclass"); 
+        document.getElementsByTagName("h4").setAttribute("class", "colorclass"); 
         
     };
-
-
 
 
 
@@ -42,14 +41,18 @@ app.controller('depensesCtrl', function($scope, $http, $rootScope) {
  	}) .then(function(response){
  		$scope.depenses=response.data.records;
 
- 	//Variable qui permet de créer le premier tableau à explorer.
+ 	    //Variable qui permet de créer le premier tableau à explorer.
         $scope.aConcernes = [];
+        
         //Tableau qui stocke les noms un par un et qui est ensuite join
         $scope.aConcernesElement = [];
+        
         //Tableau avec la liste des noms mais le mauvais index
         $scope.aConcernesTrue = [];
+        
         //Le bon tableau à utiliser
         $scope.aConcernesFinal = [];        
+            
             for($depense in $scope.depenses) {
             //On crée le tableau à explorer (le split est important car il permet de rendre ce tableau exploitable pour la boucle suivante)
             $scope.aConcernes[$depense] = $scope.depenses[$depense].Concernes.split(',');

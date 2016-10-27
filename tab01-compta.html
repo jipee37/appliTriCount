@@ -7,17 +7,9 @@
 </head>
 <body>
 
+<div ></div>
 
- <button onclick="myFunction()">Click me</button> 
-
-
-<script type='text/javascript'>
-    
-    myFunction set(color){
-        
-        document.getElementById('choix1').className = color;
-    }
-</script>
+ <button id="choix1" onclick="myFunction()">Click me</button> 
 
                    
  <select name="choix" id="choix1" class="green"><!--meme class que le premier <option> -->
@@ -29,6 +21,16 @@
     <option value = "white" class="white" onclick="set('white')">6</option> 
  </select>
     
+<script type='text/javascript'>
+    
+    myFunction set(color){
+        
+        document.getElementById('choix1').className = color;
+    }
+</script>
+
+
+
 
 </body>
 </html>
